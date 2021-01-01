@@ -11,6 +11,10 @@ client.on("ready", () => {
     new WOKCommands(client, "commands", "features")
         .setMongoPath(process.env.MONGO_URI)
         .setDefaultPrefix("!")
+
+    
+    // const cookID = "376933393822121996"
+    // client.channels.cache.get(`764949124147445770`).send(`Im Online <@${cookID}>`)
 })
 
 client.login(process.env.TOKEN)
