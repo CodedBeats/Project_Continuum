@@ -4,7 +4,8 @@ require("dotenv").config()
 const client = new DiscordJS.Client()
 
 // import files
-const ping = require("./commands/ping")
+const ping = require("./commands/ping");
+const counters = require("./commands/counters");
 
 //initialize bot 
 client.on("ready", () => {
@@ -12,6 +13,7 @@ client.on("ready", () => {
 
     // initizlize apropriate files
     ping(client)
+    counters(client)
 
 
 })
