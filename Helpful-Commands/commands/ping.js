@@ -1,11 +1,29 @@
+const Discord = require('discord.js');
+
 module.exports = client => {
+
     client.on('message', message => {
-        if (message.content.toLocaleLowerCase() === "$ping" || "$latency") {
-            message.reply("Calculating Ping.....").then(resultMessage => {
-                const ping = resultMessage.createdTimestamp - message.createdTimestamp
-            })
-            message.channel.send(`\n Bot Latency: ${ping}ms \n API Latency: ${client.ws.ping}ms`)
-            console.log("Ping Sent")
+        if (message.content.toLowerCase() === "$ping") {
+            let ping = Date.now() - message.createdTimestamp
+            let latency = Math.round(client.ws.ping)
+
+            let pingEmbed = new Discord.MessageEmbed()
+            .setDescription(`Ping is ${ping}ms. \n API Latency is ${latency}ms`)
+            .setColor("FFFF00")
+
+            message.channel.send(pingEmbed);
+            console.log("Bot's Ping Sent")
+        } else if (message.content.toLowerCase() === "$latency") {
+            let ping = Date.now() - message.createdTimestamp
+            let latency = Math.round(client.ws.ping)
+
+            let pingEmbed = new Discord.MessageEmbed()
+            .setDescription(`Ping is ${ping}ms. \n API Latency is ${latency}ms`)
+            .setColor("FFFF00")
+            
+            message.channel.send(pingEmbed)
+            console.log("Bot's Ping Sent")
         }
-    });
+    });  
+
 }
