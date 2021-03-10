@@ -15,6 +15,7 @@ client.on("ready", () => {
     // initialize live member count channel
     let myGuid = client.guilds.cache.get("731399692868649030")
     let myMemberCount = myGuid.memberCount
+    // myMemberCount = myMemberCount - 5;
     // console.log(myMemberCount)
     let memberCountChannel = myGuid.channels.cache.get("818751101557407754")
     // console.log(memberCountChannel.name)
@@ -33,6 +34,7 @@ client.on("ready", () => {
 client.on("guildMemberAdd", member => {
     let myGuid = client.guilds.cache.get("731399692868649030")
     let myMemberCount = myGuid.memberCount
+    // myMemberCount = myMemberCount - 5;
     let memberCountChannel = myGuid.channels.cache.get("818751101557407754")
     memberCountChannel.setName("Members: " + myMemberCount)
     .then(result => console.log("Gained a guild member"))
@@ -42,6 +44,7 @@ client.on("guildMemberAdd", member => {
 client.on("guildMemberRemove", member => {
     let myGuid = client.guilds.cache.get("731399692868649030")
     let myMemberCount = myGuid.memberCount
+    // myMemberCount = myMemberCount - 5;
     let memberCountChannel = myGuid.channels.cache.get("818751101557407754")
     memberCountChannel.setName("Members: " + myMemberCount)
     .then(result => console.log("Lost a guild member"))
