@@ -9,7 +9,7 @@ const client = new Discord.Client();
 
 
 // initialize files
-const baseCommands = require("./Music/base_commands")
+const baseCommands = require("./Music-Function/base_commands")
 
 
 client.once('ready', () => {
