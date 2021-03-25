@@ -13,6 +13,7 @@ module.exports = client => {
 
             message.channel.send(pingEmbed);
             console.log("Bot's Ping Sent")
+            
         } else if (message.content.toLowerCase() === "$latency") {
             let ping = Date.now() - message.createdTimestamp
             let latency = Math.round(client.ws.ping)
