@@ -1,3 +1,5 @@
+const Discord = require('discord.js');
+
 module.exports = client => {
     client.on('message', message => {
         if (message.content.toLocaleLowerCase() === 'welcome gif') {
@@ -5,9 +7,9 @@ module.exports = client => {
 
             const welcomeGifs = [
                 "https://cdn.discordapp.com/attachments/717586690041970688/802428011261460510/kpHvqo.gif",
-                "https://tenor.com/view/welcometrump-trumpwelcome-thumbs-up-gif-12122103",
-                "https://tenor.com/view/forest-gump-welcome-group-gif-18109761",
-                "https://tenor.com/view/jason-mantzoukas-the-house-greetings-welcome-gif-8225006"
+                "https://media1.tenor.com/images/3e2e5fcce1fdb994cea46097ccbd65d9/tenor.gif?itemid=12122103",
+                "https://media1.tenor.com/images/41d4de933c2b5229422bda7ee1bfb82d/tenor.gif?itemid=18109761",
+                "https://media1.tenor.com/images/857a9fed91255db5d4960ebe32501bbc/tenor.gif?itemid=8225006",
             ]
             let chanceWelcomeGifs = welcomeGifs[Math.floor(Math.random() * welcomeGifs.length)];
             
