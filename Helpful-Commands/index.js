@@ -7,7 +7,7 @@ const client = new DiscordJS.Client()
 const ping = require("./commands/ping");
 const counters = require("./commands/counters");
 const leaving = require("./commands/leaving")
-const audio = require("./commands/audio")
+const welcomeTest = require("./commands/welcome-test")
 
 //initialize bot 
 client.on("ready", () => {
@@ -30,7 +30,7 @@ client.on("ready", () => {
     ping(client)
     counters(client)
     leaving(client)
-    audio(client)
+    welcomeTest(client)
 })
 
 /*
