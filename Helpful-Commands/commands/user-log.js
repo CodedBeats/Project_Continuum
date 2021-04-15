@@ -24,7 +24,7 @@ module.exports = client => {
     
     
 
-
+//=====================================   User Join and Leave Alert   =====================================//
     const hiBye = "832235277333823498"
     client.on("guildMemberAdd", member => { 
         console.log("New User")
