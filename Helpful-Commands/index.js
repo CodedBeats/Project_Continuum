@@ -3,10 +3,11 @@ require("dotenv").config()
 
 const client = new DiscordJS.Client()
 
+
 // import files
 const ping = require("./commands/ping");
 const counters = require("./commands/counters");
-const leaving = require("./commands/leaving")
+const userLog = require("./commands/user-log")
 const welcomeTest = require("./commands/welcome-test")
 
 //initialize bot 
@@ -29,7 +30,7 @@ client.on("ready", () => {
     // initizlize apropriate files
     ping(client)
     counters(client)
-    leaving(client)
+    userLog(client)
     welcomeTest(client)
 })
 
@@ -55,7 +56,6 @@ client.on("guildMemberRemove", member => {
     .catch(error => console.log(error))
 })
 */
-
 
 
 client.login(process.env.TOKEN)
