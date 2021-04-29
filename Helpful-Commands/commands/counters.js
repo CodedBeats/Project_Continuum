@@ -25,6 +25,8 @@ module.exports = client => {
                 serverlist = serverlist.concat(" - " + guild.name + ": Members: " + guild.memberCount + "\n")
             })
     
+            console.log("Bot's Servers")
+
             const embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
             .setTitle("Servers With Project Continuum", '')
