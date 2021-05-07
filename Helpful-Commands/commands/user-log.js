@@ -2,13 +2,18 @@ const Discord = require('discord.js');
 const commandsPrefix = "^"
 module.exports = client => {
 
-    
+   
 
     
 
+//=====================================   Prune Messages   =====================================//
 
+client.on("message", message => {
+    if (message.content.startsWith(`${commandsPrefix}prune`)) {
+        
 
-
+   }
+})
 
 
 
