@@ -9,6 +9,7 @@ const counters = require("./commands/counters");
 const ping = require("./commands/ping");
 const userLog = require("./commands/user-log")
 const welcomeTest = require("./commands/welcome-test")
+const messageManipulation = require("./commands/message-manipulation")
 
 //initialize bot 
 client.on("ready", () => {
@@ -32,6 +33,7 @@ client.on("ready", () => {
     ping(client)
     userLog(client)
     welcomeTest(client)
+    messageManipulation(client)
 })
 
 /*
