@@ -6,10 +6,11 @@ const client = new DiscordJS.Client()
 
 // import files
 const counters = require("./commands/counters");
+const messageManipulation = require("./commands/message-manipulation")
 const ping = require("./commands/ping");
+const updates = require("./commands/updates")
 const userLog = require("./commands/user-log")
 const welcomeTest = require("./commands/welcome-test")
-const messageManipulation = require("./commands/message-manipulation")
 
 //initialize bot 
 client.on("ready", () => {
@@ -31,6 +32,7 @@ client.on("ready", () => {
     // initizlize apropriate files
     counters(client)
     ping(client)
+    updates(client)
     userLog(client)
     welcomeTest(client)
     messageManipulation(client)
