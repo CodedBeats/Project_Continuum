@@ -20,7 +20,7 @@ module.exports = client => {
 
         else if (message.content.toLowerCase() === "$bot servers") {
             
-            let serverlist = ''
+            let serverlist = ""
             client.guilds.cache.forEach((guild) => {
                 serverlist = serverlist.concat(" - " + guild.name + ": Members: " + guild.memberCount + "\n")
             })
@@ -33,6 +33,18 @@ module.exports = client => {
             .setDescription(serverlist)
             message.channel.send(embed);
         }
+
+        // Not Working Yet
+        /*
+        else if (message.content.toLowerCase() === "$mutual servers") {
+            const mutualGuilds = client.guilds.cache.filter((guild) => {
+                let guilds = guild.members.cache.has(message.author.id);
+                guilds = guilds.concat(`- ${guild.name} \n`)
+            });
+            console.log(mutualGuilds)
+            message.channel.send(`We Have \n ${mutualGuilds}`)
+        }
+        */
     })
 
 
