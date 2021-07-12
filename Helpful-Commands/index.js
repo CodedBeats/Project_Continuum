@@ -6,6 +6,7 @@ const client = new DiscordJS.Client()
 
 // import files
 const counters = require("./commands/counters");
+const findUser = require("./commands/find-user")
 const messageManipulation = require("./commands/message-manipulation")
 const ping = require("./commands/ping");
 const updates = require("./commands/updates")
@@ -31,11 +32,12 @@ client.on("ready", () => {
 
     // initizlize apropriate files
     counters(client)
+    findUser(client)
+    messageManipulation(client)
     ping(client)
     updates(client)
     userLog(client)
     welcomeTest(client)
-    messageManipulation(client)
 })
 
 /*
