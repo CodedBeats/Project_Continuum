@@ -1,69 +1,48 @@
 const Discord = require('discord.js');
+const prefix = "$"
 
 module.exports = client => {
 
-    let users = [
-        {
-            Suzu : ""
-        },
-        {
-            Silm : "444431900598206464"
-        },
-        {
-            Mz : "607337122248261632"
-        },
-        {
-            Cook : ""
-        },
-    ]
-
-    let guilds = [
-        {
-            Gulag : "743057030100549702"
-            // Simp bot is not in this server
-        },
-        {
-            Madlab : "731399692868649030"
-        },
-        {
-            Eden : "794898107744911361"
-        },
-        {
-            Safehouse : "853319147189567538"
-            // Continuum bot is not in this server
-            // Simp bot is not in this server
-        },
-    ]
-
-    function findUser(guild, user) {
-        if (guild.member(USER_ID)) {
-            console.log("This user is in this server")
-        }
-    }
-
     client.on('message', message => {
-        if (message.content.toLowerCase() === `<${suzu}>`) {
-            if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to use this command")
-            
-            
-            message.channel.send("x");
-            console.log("x")
+        if (message.content.toLowerCase().startsWith(`$is`)) {
+            let args = message.content.split(" ")
+
+            // Catch Errors
+            if (args[2].toLowerCase() !== "in") {
+
+                let format = new Discord.MessageEmbed()
+                .setColor("RANDOM")
+                .setTitle("Find User Format")
+                .setDescription("$is   *`User`*   in   *`Server`* \n (make sure you have the capital letters right)")
+                message.channel.send(format)
+                return
+
+            } else if (message.author.bot) {
+                return
+            }
+
+            // Define arguments
+            let userName = args[1]
+            let serverName = ``
+            if (args.length == 4) {
+                serverName = `${args[3]}`
+            } else if(args.length == 5) {
+                serverName = `${args[3]} ${args[4]}`
+            } 
+
+            // Find user and server objects
+            user = client.users.cache.find(user => user.username === userName)
+            server = client.guilds.cache.find(server => server.name === serverName)
+
+            // Send Result
+            if (server.member(user.id)) {
+                message.channel.send(`Yes, ${user} **IS** in ${server}`);
+                console.log(`${user.username} is in ${server}`)
+            } else {
+                message.channel.send(`No, ${user} is **NOT** in ${server}`)
+                console.log(`${user.username} is not in ${server}`)
+            }
         } 
     }); 
-    
-    
-    client.on('message', message => {
-        if (message.content.toLowerCase() === `cook?`) {
-            if (!message.member.hasPermission("ADMINISTRATOR")) return message.channel.send("You don't have permission to use this command")
-            let guild = client.guilds.get("731399692868649030")
-            let USER_ID = "376933393822121996"
-            if (guild.member(USER_ID)) {
-                console.log("This user is in this server")
-            }
-            
-            message.channel.send("here");
-            console.log("x")
-        } 
-    });
 
 }
