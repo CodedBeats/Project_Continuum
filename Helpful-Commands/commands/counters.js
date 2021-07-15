@@ -34,6 +34,7 @@ module.exports = client => {
             message.channel.send(embed);
         }
 
+        // User mutual with bot?
         // Not Working Yet
         /*
         else if (message.content.toLowerCase() === "$mutual servers") {
