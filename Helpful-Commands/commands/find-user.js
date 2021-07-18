@@ -1,5 +1,4 @@
 const Discord = require('discord.js');
-const prefix = "$"
 
 module.exports = client => {
 
