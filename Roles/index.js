@@ -5,7 +5,7 @@ const client = new DiscordJS.Client()
 
 // import files
 // const roleClaim = require("./roleClaim")
-const roleClaim2 = require("./roleClaim2")
+const roleClaim3 = require("./roleClaim3")
 const reanimate = require("./reanimate")
 
 
@@ -15,7 +15,7 @@ client.on("ready", () => {
 
     // initizlize apropriate files
     // roleClaim(client)
-    roleClaim2(client)
+    roleClaim3(client)
     reanimate(client, "871646091941146624", "red")
 })
 
