@@ -8,20 +8,20 @@ module.exports = client => {
     const getEmoji = (emojiName) => client.emojis.cache.find((emoji) => emoji.name === emojiName)
 
     // get emojis for roles
-    /* Mad Lab Emojis
+    // Mad Lab Emojis
     const emojis = {
         coder: 'Psychotic Calculated Coder',
         oblivion: 'Atypical Assistant',
     }
-    */
-   // velox emojis
-    const emojis = {
-        valorant: 'valo-pugs',
-        paladins: 'paladins-pugs',
-        overwatch: 'ow-pugs',
-        tv: "movie-ping",
-        video_game: "content-ping",
-    }
+    
+    // velox emojis
+    // const emojis = {
+    //     valorant: 'valo-pugs',
+    //     paladins: 'paladins-pugs',
+    //     overwatch: 'ow-pugs',
+    //     tv: "movie-ping",
+    //     video_game: "content-ping",
+    // }
 
     const reactions = []
 
