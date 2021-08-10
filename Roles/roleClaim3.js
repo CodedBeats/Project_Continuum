@@ -24,10 +24,15 @@ module.exports = client => {
     //     video_game: "content-ping",
     // }
 
+    // gulag emojis
+    // const emojis = {
+    //     
+    // }
+
     const reactions = []
 
     // Define emoji text for message update
-    let emojiText = '**To caim a role you click on a reaction emote that belongs to the role you desire.**\n\n'
+    let emojiText = '**To claim a role, click on the emote associated with the role you want**\n\n'
     for (const key in emojis) {
         const emoji = getEmoji(key)
         reactions.push(emoji)
@@ -43,7 +48,7 @@ module.exports = client => {
     // construct embed
     const exampleEmbed = new Discord.MessageEmbed()
         .setColor('RANDOM')
-        .setTitle(`__**COME GETCHA ROLES**__`)
+        .setTitle(`__**Claiming Roles**__`)
         .setDescription(`${emojiText}`)
         .setThumbnail('https://i.pinimg.com/originals/78/a9/6d/78a96d96ffa60a4477d0f17e9bd55a36.png')
 
