@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const firstMessage = require('./firstMessage')
 
 module.exports = client => {
-    const channelID = "874618909154766848"
+    const channelID = "875348679979048960"
 
     // search emoji
     const getEmoji = (emojiName) => client.emojis.cache.find((emoji) => emoji.name === emojiName)
@@ -10,7 +10,7 @@ module.exports = client => {
     // get emojis for roles
     const generalEmojis = {
         partay: 'Event Ping',
-        blobgift: 'Give Aways',
+        blobgift: 'Giveaways',
         pingTicket: 'Movie Night',
         streaming: 'Content Ping',
     }
@@ -30,14 +30,15 @@ module.exports = client => {
         owlogo: 'Overwatch',
         paladins: 'Paladins',
         Sea_Of_Thieves: 'Sea of Thieves',
+        minecraft: "Minecraft",
     }
 
     // create reactions for final message
     const reactions = []
-    let emojiText = '**To claim a role, click on the emote associated with the role you want**\n\n'
+    let emojiText = '• To claim a role, click on the emote associated with the role you want\n\n'
 
     // general roles
-    emojiText += `\n **GENERAL PINGS** \n`
+    emojiText += `\n **GENERAL PINGS** \n • Claim your roles to join and contribute for OUR server hypes \n`
     for (const key in generalEmojis) {
         const emoji = getEmoji(key)
         reactions.push(emoji)
@@ -48,7 +49,7 @@ module.exports = client => {
     }
     
     // dungeon roles
-    emojiText += `\n **DUNGEON PERMISSION 18+** \n`
+    emojiText += `\n **DUNGEON PERMISSION 18+** \n • For those who seek the cursed and horny random contents in here..Please enter at your own risk.. \n`
     for (const key in dungeonEmojis) {
         const emoji = getEmoji(key)
         reactions.push(emoji)
@@ -59,7 +60,7 @@ module.exports = client => {
     }
     
     // Looking for party roles
-    emojiText += `\n **LOOKING FOR PARTY/CO-OP PINGS** \n`
+    emojiText += `\n **LOOKING FOR PARTY/CO-OP PINGS** \n • Claim these roles if you're tired of being a loner \n (For those who claim these roles you will most likely receive pings often) \n`
     for (const key in LFPEmojis) {
         const emoji = getEmoji(key)
         reactions.push(emoji)
@@ -70,7 +71,7 @@ module.exports = client => {
     }
     
     // game roles
-    emojiText += `\n **GAME ROLES** \n`
+    emojiText += `\n **GAME ROLES** \n • If you play these games then react to it\n`
     for (const key in gameEmojis) {
         const emoji = getEmoji(key)
         reactions.push(emoji)
@@ -84,10 +85,11 @@ module.exports = client => {
 
     // construct embed
     const exampleEmbed = new Discord.MessageEmbed()
-        .setColor('RANDOM')
-        .setTitle(`__**Claiming Roles**__`)
+        .setColor('RED')
+        .setTitle(`__**Role Claim**__`)
         .setDescription(`${emojiText}`)
-        .setThumbnail('https://i.pinimg.com/originals/78/a9/6d/78a96d96ffa60a4477d0f17e9bd55a36.png')
+        .setThumbnail("https://cdn.discordapp.com/attachments/717586690041970688/802439752417935370/AllJointHatchetfish-max-1mb.gif")
+        .setFooter("\u3000".repeat(10/*any big number works too*/)+"")
 
 
 
@@ -101,6 +103,7 @@ module.exports = client => {
         owlogo: 'Overwatch',
         paladins: 'Paladins',
         Sea_Of_Thieves: 'Sea of Thieves',
+        minecraft: "Minecraft",
         kianashake: 'Honkai Impact LFP',
         Klee: 'Genshin Impact LFP',
         UwUreaper: 'Overwatch LFP',
@@ -108,7 +111,7 @@ module.exports = client => {
         reaperflag: 'Sea of Thieves LFP',
         alertexclamation: 'Foot Soldier',
         partay: 'Event Ping',
-        blobgift: 'Give Aways',
+        blobgift: 'Giveaways',
         pingTicket: 'Movie Night',
         streaming: 'Content Ping',
     }
