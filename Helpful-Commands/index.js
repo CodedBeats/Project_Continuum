@@ -1,17 +1,18 @@
-const DiscordJS = require("discord.js")
+const DiscordJS = require("discord.js");
 require("dotenv").config()
 
 const client = new DiscordJS.Client()
 
 
 // import files
+const badWords = require("./commands/badWords");
 const counters = require("./commands/counters");
-const findUser = require("./commands/find-user")
-const messageManipulation = require("./commands/message-manipulation")
+const findUser = require("./commands/findUser")
+const messageManipulation = require("./commands/messageManipulation")
 const ping = require("./commands/ping");
 const updates = require("./commands/updates")
-const userLog = require("./commands/user-log")
-const welcomeTest = require("./commands/welcome-test")
+const userLog = require("./commands/userLog")
+const welcomeTest = require("./commands/welcomeTest")
 
 //initialize bot 
 client.on("ready", () => {
@@ -32,6 +33,7 @@ client.on("ready", () => {
 
 
     // initizlize apropriate files
+    badWords(client)
     counters(client)
     findUser(client)
     messageManipulation(client)

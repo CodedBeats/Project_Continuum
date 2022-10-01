@@ -15,6 +15,5 @@ module.exports = client => {
             console.log("Bot's Ping Sent")
             
         } 
-    });  
-
+    })  
 }
