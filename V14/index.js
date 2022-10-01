@@ -16,6 +16,7 @@ const client = new Client({
 })
 
 client.events = new Collection()
+client.commands = new Collection()
 // loadEvents needs to be below Collection init becuase we clear the collection in this func
 loadEvents(client)
 
@@ -24,8 +25,4 @@ client
 .login(process.env.TOKEN)
 .then(() => {client.user.setActivity(`with ${client.guilds.cache.size} guild(s)`)})
 
-client.on("messageCreate", message => {
-    if (message.content === "ping") {
-        message.reply("pong")
-    }
-})
+

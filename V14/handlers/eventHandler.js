@@ -8,7 +8,7 @@ async function loadEvents(client) {
     // awaiting everything deleting in the previous collection (fresh slate)
     await client.events.clear()
 
-    // telling the loadFiles func to load all files in "events folder"
+    // telling the loadFiles func to load all files in "events" folder
     const Files = await loadFiles("events")
 
     Files.forEach((file) => {
