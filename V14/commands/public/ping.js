@@ -1,6 +1,6 @@
 // dependencies
 const { ChatInputCommandInteraction, SlashCommandBuilder } = require("discord.js")
-const { execute } = require("../../events/client/read")
+const { execute } = require("../../events/client/ready")
 
 module.exports = {
     data: new SlashCommandBuilder()
