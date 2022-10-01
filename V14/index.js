@@ -9,6 +9,9 @@ require("dotenv/config")
 // ==func import==
 const { loadEvents } = require("./handlers/eventHandler")
 
+// import moderation to handle non-commands (this needs to be improved)
+const moderation = require("./moderation/blackList")
+
 // init client with what it needs to know
 const client = new Client({
     intents: [ Guilds, GuildMembers, GuildMessages, MessageContent],
@@ -23,6 +26,9 @@ loadEvents(client)
 // login with TOKEN and set bot's activity to state how many servers it is in
 client
 .login(process.env.TOKEN)
-.then(() => {client.user.setActivity(`with ${client.guilds.cache.size} guild(s)`)})
-
+.then(() => {
+    client.user.setActivity(`with ${client.guilds.cache.size} guild(s)`)
+    // start up other non-command files
+    moderation(client)
+})
 

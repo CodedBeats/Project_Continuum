@@ -12,7 +12,7 @@ module.exports = {
         if(!interaction.isChatInputCommand()) return
 
         const command = client.commands.get(interaction.commandName)
-        // if we didn't find this command
+        // if we didn't find this command (potentially commands made that were deleted)
         if(!command) 
         // exit file and reply to user
         return interaction.reply({

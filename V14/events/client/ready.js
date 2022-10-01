@@ -4,7 +4,7 @@ module.exports = {
     name: "ready",
     once: true,
     execute(client) {
-        console.log("The client is now ready")
+        // console.log("The client is now ready")
 
         loadCommands(client)
     }
