@@ -8,7 +8,7 @@ async function loadEvents(client) {
     // awaiting everything deleting in the previous collection (fresh slate)
     await client.events.clear()
 
-    // telling the loadFiles func to load all files in "events" folder
+    // telling the loadFiles func to load all files in "events" folder (returns array)
     const Files = await loadFiles("events")
 
     Files.forEach((file) => {
@@ -18,13 +18,17 @@ async function loadEvents(client) {
         client.events.set(event.name, execute)
 
         if (event.rest) {
-            if (event.once) client.rest.once(event.name, execute)
-            else
-            client.rest.on(event.name, execute)
+            if (event.once) {
+                client.rest.once(event.name, execute)
+            } else {
+                client.rest.on(event.name, execute)
+            }
         } else {
-            if (event.once) client.once(event.name, execute)
-            else
-            client.on(event.name, execute)
+            if (event.once) { 
+                client.once(event.name, execute)
+            } else {
+                client.on(event.name, execute)
+            }
         }
 
         table.addRow(event.name, "✅")
